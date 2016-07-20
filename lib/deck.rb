@@ -1,7 +1,7 @@
 class Deck
   attr_reader :cards
 
-  COLORS = [:red, :black]
+  COLORS = [:black, :red]
   SUITS = [:spade, :club, :diamond, :heart]
 
   def initialize
