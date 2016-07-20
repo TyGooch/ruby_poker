@@ -1,4 +1,5 @@
 class Deck
+
   attr_reader :cards
 
   COLORS = [:black, :red]
@@ -26,4 +27,5 @@ class Deck
     end
     card_arr
   end
+  
 end
