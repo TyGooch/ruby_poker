@@ -1,6 +1,31 @@
 require 'poker'
 require 'rspec'
 
+describe Player do
+  let(:player) {Player.new(0, Hand.new)}
+
+  describe "#initialize" do
+    it 'accepts two arguments' do
+      expect {Player.new}.to raise_error(ArgumentError)
+    end
+
+    it 'sets bet actions' do
+      expect(player.bet_actions).to_not eq([])
+    end
+
+  end
+
+  describe '#bet' do
+    it 'updates pot' do
+      bet = 20
+      player.bet(20)
+      expect(player.pot).to eq(480)
+    end
+  end
+
+end
+
+
 describe Card do
   let(:ace_of_spades) {Card.new(:black, :spade, 14)}
   let(:queen_of_hearts) {Card.new(:red, :heart, 12)}

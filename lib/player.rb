@@ -1,6 +1,6 @@
 class Player
   attr_accessor :in_round
-  attr_reader :bet_actions, :name
+  attr_reader :bet_actions, :name, :pot
 
   def initialize(player_id, hand)
     @name = "Player #{player_id}"
@@ -17,6 +17,8 @@ class Player
     discards = gets.chomp.split(",")
     raise 'too many cards chosen' if discards.size > 3
     raise 'invalid input' unless discards.all?{|card| card.is_a?(Fixnum)}
+
+    #convert discards indices to cards
     discards
   end
 
@@ -31,7 +33,5 @@ class Player
   def bet(bet_amount)
     @pot -= bet_amount
   end
-
-
 
 end

@@ -14,7 +14,7 @@ class Hand
   end
 
   def remove_card(card)
-    @cards.delete(card)
+    @cards.delete(card) if @cards.include? card
   end
 
   def beats_hand?(other_hand)
