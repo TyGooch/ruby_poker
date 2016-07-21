@@ -27,5 +27,9 @@ class Deck
     end
     card_arr
   end
-  
+
+  def deal
+    @cards.take(5)
+  end
+
 end
